@@ -8,10 +8,25 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Foundation for Sites</title>
     <link rel="stylesheet" href="{{root}}assets/css/app.css">
+    <script src="https://use.fontawesome.com/274ba029ae.js"></script>
   </head>
   <body>
 
-    {{!-- Pages you create in the src/pages/ folder are inserted here when the flattened page is created. --}}
+    <div class="top-bar">
+      <div class="row">
+        <div class="small-3 columns">
+          <i class="fa fa-angle-left"></i>
+        </div>
+        <div class="small-6 columns title">
+          Search
+        </div>
+        <div class="small-3 columns">
+          <i class="fa fa-user-circle"></i>
+          <i class="fa fa-phone"></i>
+        </div>
+      </div>
+    </div>
+    
     {{> body}}
 
     <script src="{{root}}assets/js/app.js"></script>

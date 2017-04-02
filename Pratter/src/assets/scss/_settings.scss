@@ -197,10 +197,10 @@ $input-error-font-weight: $global-weight-bold;
 // ------------
 
 $accordion-background: $white;
-$accordion-plusminus: true;
+$accordion-plusminus: false;
 $accordion-title-font-size: rem-calc(12);
 $accordion-item-color: $primary-color;
-$accordion-item-background-hover: $light-gray;
+$accordion-item-background-hover: $white;
 $accordion-item-padding: 1.25rem 1rem;
 $accordion-content-background: $white;
 $accordion-content-border: 1px solid $light-gray;
@@ -432,9 +432,9 @@ $meter-fill-bad: $alert-color;
 // --------------
 
 $offcanvas-size: 250px;
-$offcanvas-vertical-size: 400px;
+$offcanvas-vertical-size: 200px;
 $offcanvas-background: $light-gray;
-$offcanvas-shadow: 0 0 10px rgba($black, 0.7);
+$offcanvas-shadow: 0 0 0;
 $offcanvas-push-zindex: 1;
 $offcanvas-overlap-zindex: 10;
 $offcanvas-reveal-zindex: 1;
@@ -613,7 +613,7 @@ $tooltip-radius: $global-radius;
 // -----------
 
 $topbar-padding: 0.5rem;
-$topbar-background: $light-gray;
+$topbar-background: $white;
 $topbar-submenu-background: $topbar-background;
 $topbar-title-spacing: 0.5rem 1rem 0.5rem 0;
 $topbar-input-width: 200px;

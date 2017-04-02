@@ -1,0 +1,72 @@
+#bottomDiv {
+	height: 320px; //note that this is 100px more than what is specified in settings.scss, forces the top of the div to show at the bottom of the screen
+}
+.price {
+	font-size: 40px;
+}
+.name {
+	font-size: 25px;
+}
+.location {
+	font-size: 13px;
+}
+.title {
+	font-size: 45px;
+}
+
+.no-padding {
+	padding: 0;
+}
+.full-width {
+	max-width: 100%;
+}
+.slider {
+	width: 90vw;
+	margin: auto;
+}
+.top-bar, .search {
+	border-bottom: 1px solid black;;
+}
+.top-bar, .off-canvas-content, .search {
+	text-align: center;
+}
+.search {
+	padding: 20px;
+}
+.search-by-distance {
+	background-color:rgba(0, 0, 0, 0);
+	width: 100vw;
+}
+.rating {
+  unicode-bidi: bidi-override;
+  direction: rtl;
+}
+.rating > span {
+  display: inline-block;
+  position: relative;
+  width: 1.1em;
+}
+.rating > span:hover:before,
+.rating > span:hover ~ span:before {
+   content: "\2605";
+   position: absolute;
+}
+
+
+.bubble-speech {
+  position: relative;
+  margin: auto;
+  background-color: #efefef;
+  padding: 5px;
+}
+.bubble-speech.bubble-left:after {
+  z-index: 9002;
+  display: block;
+  content: "";
+  position: absolute;
+  bottom: -11px;
+  left: 0;
+  border-top: 0 #efefef solid;
+  border-bottom: 12px transparent solid;
+  border-left: 20px #efefef solid;
+}
