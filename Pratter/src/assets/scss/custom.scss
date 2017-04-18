@@ -1,3 +1,8 @@
+/* make google map fill screen */
+html, body, .off-canvas-wrapper, .off-canvas-content, #map-row {
+  height: 100%;
+}
+
 #bottomDiv {
 	height: 320px; //note that this is 100px more than what is specified in settings.scss, forces the top of the div to show at the bottom of the screen
 }
@@ -33,10 +38,7 @@
 .search {
 	padding: 20px;
 }
-.search-by-distance {
-	background-color:rgba(0, 0, 0, 0);
-	width: 100vw;
-}
+
 .rating {
   unicode-bidi: bidi-override;
   direction: rtl;
@@ -52,6 +54,11 @@
    position: absolute;
 }
 
+#map {
+  /* Always set the map height explicitly to define the size of the div
+   * element that contains the map. */
+  height: 80%;
+}
 
 .bubble-speech {
   position: relative;
