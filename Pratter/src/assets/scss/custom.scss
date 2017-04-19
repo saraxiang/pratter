@@ -12,12 +12,13 @@ html {
 
 /* make google map fill screen */
 html, body, .off-canvas-wrapper, .off-canvas-content, #map-row {
-  height: 100%;
+  height: 97%;
 }
 
 #bottomDiv {
 	height: 320px; //note that this is 100px more than what is specified in settings.scss, forces the top of the div to show at the bottom of the screen
-}
+} 
+
 .price {
 	font-size: 40px;
 }
@@ -44,8 +45,11 @@ html, body, .off-canvas-wrapper, .off-canvas-content, #map-row {
 	width: 90vw;
 	margin: auto;
 }
-.top-bar, .search {
-	border-bottom: 1px solid black;;
+.light-bottom-border {
+	border-bottom: 1px solid $light-gray;
+}
+.heavy-bottom-border {
+  border-bottom: 3px solid $light-gray;
 }
 .top-bar, .off-canvas-content, .search{
 	text-align: center;
@@ -57,19 +61,19 @@ html, body, .off-canvas-wrapper, .off-canvas-content, #map-row {
 #map {
   /* Always set the map height explicitly to define the size of the div
    * element that contains the map. */
-  height: 80%;
+  height: 100%;
 }
 
 /* search */
-#search_text{
+#search-text{
     padding: 8px 0px 8px 5px;
     width: 85%;
-    font-size: 18px;
+    font-size: 17px;
     border: 0 none;
     height: 52px;
     margin-right: 0;
     margin-bottom: 0;
-    color: $black;
+    color: $dark-gray;
     outline: none;
     background: $white;
     float: left;
@@ -77,7 +81,7 @@ html, body, .off-canvas-wrapper, .off-canvas-content, #map-row {
     transition: all 0.15s;
 }
 
-#search_button {
+#search-button {
     border: 0 none;
     background: white url(https://dl.dropboxusercontent.com/s/briypj1tztrcj34/search.png?dl=0) center no-repeat;
     width: 15%;
@@ -89,7 +93,7 @@ html, body, .off-canvas-wrapper, .off-canvas-content, #map-row {
 }
 
 input::placeholder {
-  color: $black;
+  color: $dark-gray;
 }
 
 textarea:focus, input:focus{
@@ -144,4 +148,12 @@ textarea:focus, input:focus{
   color: $white;
   cursor: pointer;
   font-weight: bold;
+}
+
+#options {
+  list-style: none;
+}
+
+.option-item {
+  
 }
