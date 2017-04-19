@@ -16,17 +16,47 @@ html, body, .off-canvas-wrapper, .off-canvas-content, #map-row {
 }
 
 #bottomDiv {
-	height: 320px; //note that this is 100px more than what is specified in settings.scss, forces the top of the div to show at the bottom of the screen
+	height: 320px; //note that this is more than what is specified in settings.scss, forces the top of the div to show at the bottom of the screen
 } 
 
+.dark-gray {
+  color: $dark-gray;
+}
+
+.price-tag {
+  border: 0 none;
+  background: white url(https://dl.dropboxusercontent.com/s/714lngd1rqt5y81/price-tag.png?dl=0) center no-repeat;
+  padding: 0;
+  text-align: center;
+  height: 22px;
+  width: 35px;
+}
+
+.price-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.charge-price {
+  color: $orange;
+}
+.insurance-price {
+  color: $green;
+}
 .price {
-	font-size: 40px;
+	font-size: 30px;
+  display: inline-block;
 }
 .name {
-	font-size: 25px;
+  color: $dark-gray;
+	font-size: 18px;
+  line-height: 21px;
 }
 .location {
-	font-size: 13px;
+  color: $dark-gray;
+	font-size: 12px;
+  line-height: 14px;
 }
 .title {
 	font-size: 21px;
@@ -152,8 +182,9 @@ textarea:focus, input:focus{
 
 #options {
   list-style: none;
+  color: $dark-gray;
 }
 
 .option-item {
-  
+  padding: 15px 0px;
 }
