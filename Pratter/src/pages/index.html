@@ -365,12 +365,18 @@
   <div class="off-canvas-content" data-off-canvas-content>
     <div class="row full-width">
       <div class="small-12 columns no-padding search">
-        Completed Metabolic Panel (CMP)
+        <form action="" method="get">
+            <input type="text" name="search_text" id="search_text" placeholder="Complete Metabolic Panel (CMP)"/>
+            <input type="button" name="search_button" id="search_button">
+        </form>
       </div>
     </div>
-    <div class="row full-width">
-      <div class="small-12 columns no-padding search">
-        Within <b>10</b> miles of <b>15213</b> and price range <b>$10 - $100</b>
+    <div id="search-details-wrapper" class="row full-width">
+      <div id="search-details" class="small-8 columns no-padding search">
+        <b>15213</b> within <b>10</b> miles and <b>$10-$100</b>
+      </div>
+      <div id="search-by" class="small-4 columns no-padding search">
+        <b> Price </b> | Distance
       </div>
     </div>
     <div id="map-row" class="row full-width">
