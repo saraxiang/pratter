@@ -2,6 +2,14 @@ html {
   font-family: "Franklin Gothic Medium", "Franklin Gothic", "ITC Franklin Gothic", Arial, sans-serif;
 }
 
+.top-bar {
+  padding: 12px 8px;
+}
+
+.bold {
+  font-weight: bold;
+}
+
 /* make google map fill screen */
 html, body, .off-canvas-wrapper, .off-canvas-content, #map-row {
   height: 100%;
@@ -20,12 +28,15 @@ html, body, .off-canvas-wrapper, .off-canvas-content, #map-row {
 	font-size: 13px;
 }
 .title {
-	font-size: 45px;
+	font-size: 21px;
+  color: $blue;
+  font-weight: bold;
 }
 
 .no-padding {
 	padding: 0;
 }
+
 .full-width {
 	max-width: 100%;
 }
@@ -36,26 +47,11 @@ html, body, .off-canvas-wrapper, .off-canvas-content, #map-row {
 .top-bar, .search {
 	border-bottom: 1px solid black;;
 }
-.top-bar, .off-canvas-content, .search {
+.top-bar, .off-canvas-content, .search{
 	text-align: center;
 }
 .search {
-	padding: 20px;
-}
-
-.rating {
-  unicode-bidi: bidi-override;
-  direction: rtl;
-}
-.rating > span {
-  display: inline-block;
-  position: relative;
-  width: 1.1em;
-}
-.rating > span:hover:before,
-.rating > span:hover ~ span:before {
-   content: "\2605";
-   position: absolute;
+  padding: 8px;
 }
 
 #map {
@@ -64,40 +60,18 @@ html, body, .off-canvas-wrapper, .off-canvas-content, #map-row {
   height: 80%;
 }
 
-.bubble-speech {
-  position: relative;
-  margin: auto;
-  background-color: #efefef;
-  padding: 5px;
-}
-.bubble-speech.bubble-left:after {
-  z-index: 9002;
-  display: block;
-  content: "";
-  position: absolute;
-  bottom: -11px;
-  left: 0;
-  border-top: 0 #efefef solid;
-  border-bottom: 12px transparent solid;
-  border-left: 20px #efefef solid;
-}
-
 /* search */
-#search {
-    width: 357px;
-    margin: 4px;
-}
 #search_text{
-    width: 297px;
-    padding: 0 0 0 20px;
+    padding: 8px 0px 8px 5px;
+    width: 85%;
     font-size: 18px;
     border: 0 none;
     height: 52px;
     margin-right: 0;
     margin-bottom: 0;
-    color: black;
+    color: $black;
     outline: none;
-    background: white;
+    background: $white;
     float: left;
     box-sizing: border-box;
     transition: all 0.15s;
@@ -106,7 +80,7 @@ html, body, .off-canvas-wrapper, .off-canvas-content, #map-row {
 #search_button {
     border: 0 none;
     background: white url(https://dl.dropboxusercontent.com/s/briypj1tztrcj34/search.png?dl=0) center no-repeat;
-    width: 60px;
+    width: 15%;
     float: left;
     padding: 0;
     text-align: center;
@@ -115,7 +89,7 @@ html, body, .off-canvas-wrapper, .off-canvas-content, #map-row {
 }
 
 input::placeholder {
-  color: black;
+  color: $black;
 }
 
 textarea:focus, input:focus{
@@ -127,5 +101,47 @@ textarea:focus, input:focus{
 }
 
 #search-details, #search-by {
-  padding: 20px 5px 20px ; 
+  padding: 15px 5px 15px ; 
+}
+
+#view-toggle {
+  color: $orange;
+  text-decoration: underline;
+  font-size: 14px;
+}
+
+#info-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+}
+#info {
+  font-size: 15px;
+  width: 22px;
+  height: 22px;
+  -moz-border-radius: 50px;
+  -webkit-border-radius: 50px;
+  border-radius: 50px;
+  border: 1px solid $blue;
+  color: $blue;
+}
+
+#call-button-wrapper {
+  padding: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+#call-button {
+  padding-top: 8px;
+  font-size: 10px;
+  width: 100%;
+  height: 30px;
+  -moz-border-radius: 5px;
+  -webkit-border-radius: 5px;
+  border-radius: 5px;
+  background-color: $orange;
+  color: $white;
+  cursor: pointer;
+  font-weight: bold;
 }

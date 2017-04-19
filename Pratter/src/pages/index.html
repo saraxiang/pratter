@@ -1,3 +1,19 @@
+<div class="top-bar">
+  <div class="row align-middle">
+    <div id="view-toggle" class="small-3 columns bold">
+      List View
+    </div>
+    <div class="small-6 columns title">
+      Search
+    </div>
+    <div id="call-button-wrapper" class="small-3 columns">
+      <div id="call-button">
+        CALL CONCIERGE
+      </div>
+    </div>
+  </div>
+</div>
+
 <div class="off-canvas-wrapper">
   <div class="off-canvas position-bottom" id="bottomDiv" data-transition="overlap" data-off-canvas>
     <ul class="accordion" data-allow-all-closed="true" data-multi-expand="true" data-accordion>
@@ -364,7 +380,10 @@
   </div>
   <div class="off-canvas-content" data-off-canvas-content>
     <div class="row full-width">
-      <div class="small-12 columns no-padding search">
+      <div id="info-wrapper" class="small-2 columns no-padding search">
+        <div id="info">i</div>
+      </div>
+      <div class="small-10 columns no-padding search">
         <form action="" method="get">
             <input type="text" name="search_text" id="search_text" placeholder="Complete Metabolic Panel (CMP)"/>
             <input type="button" name="search_button" id="search_button">
@@ -381,7 +400,6 @@
     </div>
     <div id="map-row" class="row full-width">
       <div id="map" class="small-12 no-padding columns">
-
       </div>
       <script>
         var map;
