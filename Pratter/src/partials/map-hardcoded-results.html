@@ -1,0 +1,317 @@
+<div id="map-row" class="row full-width">
+  <div id="map" class="small-12 no-padding columns">
+  </div>
+  <script>
+    var map;
+    function initMap() {
+      var cmuLocation = {lat: 40.44, lng: -79.943719};
+      var map = new google.maps.Map(document.getElementById('map'), {
+        center: cmuLocation, 
+        // TODO: make this responsive based on "within however many miles"?
+        zoom: 14, 
+        styles:
+        [
+          {
+            "elementType": "geometry",
+            "stylers": [
+              {
+                "color": "#E4ECF1"
+              }
+            ]
+          },
+          {
+            "elementType": "labels",
+            "stylers": [
+              {
+                "visibility": "off"
+              }
+            ]
+          },
+          {
+            "elementType": "labels.icon",
+            "stylers": [
+              {
+                "visibility": "off"
+              }
+            ]
+          },
+          {
+            "elementType": "labels.text.fill",
+            "stylers": [
+              {
+                "color": "#616161"
+              }
+            ]
+          },
+          {
+            "elementType": "labels.text.stroke",
+            "stylers": [
+              {
+                "color": "#f5f5f5"
+              }
+            ]
+          },
+          {
+            "featureType": "administrative",
+            "elementType": "geometry",
+            "stylers": [
+              {
+                "visibility": "off"
+              }
+            ]
+          },
+          {
+            "featureType": "administrative.land_parcel",
+            "stylers": [
+              {
+                "visibility": "off"
+              }
+            ]
+          },
+          {
+            "featureType": "administrative.land_parcel",
+            "elementType": "labels.text.fill",
+            "stylers": [
+              {
+                "color": "#bdbdbd"
+              }
+            ]
+          },
+          {
+            "featureType": "administrative.neighborhood",
+            "stylers": [
+              {
+                "visibility": "off"
+              }
+            ]
+          },
+          {
+            "featureType": "poi",
+            "stylers": [
+              {
+                "visibility": "off"
+              }
+            ]
+          },
+          {
+            "featureType": "poi",
+            "elementType": "geometry",
+            "stylers": [
+              {
+                "color": "#eeeeee"
+              }
+            ]
+          },
+          {
+            "featureType": "poi",
+            "elementType": "labels.text.fill",
+            "stylers": [
+              {
+                "color": "#757575"
+              }
+            ]
+          },
+          {
+            "featureType": "poi.park",
+            "elementType": "geometry",
+            "stylers": [
+              {
+                "color": "#e5e5e5"
+              }
+            ]
+          },
+          {
+            "featureType": "poi.park",
+            "elementType": "labels.text.fill",
+            "stylers": [
+              {
+                "color": "#9e9e9e"
+              }
+            ]
+          },
+          {
+            "featureType": "road",
+            "elementType": "geometry",
+            "stylers": [
+              {
+                "color": "#C8CFD3"
+              }
+            ]
+          },
+          {
+            "featureType": "road",
+            "elementType": "labels.icon",
+            "stylers": [
+              {
+                "visibility": "off"
+              }
+            ]
+          },
+          {
+            "featureType": "road.arterial",
+            "elementType": "labels.text.fill",
+            "stylers": [
+              {
+                "color": "#757575"
+              }
+            ]
+          },
+          {
+            "featureType": "road.highway",
+            "elementType": "geometry",
+            "stylers": [
+              {
+                "color": "#dadada"
+              }
+            ]
+          },
+          {
+            "featureType": "road.highway",
+            "elementType": "labels.text.fill",
+            "stylers": [
+              {
+                "color": "#616161"
+              }
+            ]
+          },
+          {
+            "featureType": "road.local",
+            "elementType": "labels.text.fill",
+            "stylers": [
+              {
+                "color": "#9e9e9e"
+              }
+            ]
+          },
+          {
+            "featureType": "transit",
+            "stylers": [
+              {
+                "visibility": "off"
+              }
+            ]
+          },
+          {
+            "featureType": "transit.line",
+            "elementType": "geometry",
+            "stylers": [
+              {
+                "color": "#e5e5e5"
+              }
+            ]
+          },
+          {
+            "featureType": "transit.station",
+            "elementType": "geometry",
+            "stylers": [
+              {
+                "color": "#eeeeee"
+              }
+            ]
+          },
+          {
+            "featureType": "water",
+            "elementType": "geometry",
+            "stylers": [
+              {
+                "color": "#c9c9c9"
+              }
+            ]
+          },
+          {
+            "featureType": "water",
+            "elementType": "labels.text.fill",
+            "stylers": [
+              {
+                "color": "#9e9e9e"
+              }
+            ]
+          }
+        ]
+      });
+
+      // NOTE: uncomment the code below for detection + marking of user location
+      // var infoWindow;
+      // infoWindow = new google.maps.InfoWindow;
+      // // Try HTML5 geolocation.
+      // if (navigator.geolocation) {
+      //   navigator.geolocation.getCurrentPosition(function(position) {
+      //     var pos = {
+      //       lat: position.coords.latitude,
+      //       lng: position.coords.longitude
+      //     };
+
+      //     infoWindow.setPosition(pos);
+      //     infoWindow.setContent('Your location');
+      //     infoWindow.open(map);
+      //   }, function() {
+      //     handleLocationError(true, infoWindow, map.getCenter());
+      //   });
+      // } else {
+      //   // Browser doesn't support Geolocation
+      //   handleLocationError(false, infoWindow, map.getCenter());
+      // }
+
+      // function handleLocationError(browserHasGeolocation, infoWindow, pos) {
+      //   infoWindow.setPosition(pos);
+      //   infoWindow.setContent(browserHasGeolocation ?
+      //                         'Error: The Geolocation service failed.' :
+      //                         'Error: Your browser doesn\'t support geolocation.');
+      //   infoWindow.open(map);
+      // }
+
+      // NOTE: image hosted on Dropbox: https://ryanmo.co/2013/11/03/dropboxsharedlinks/
+      var orangeCircle = 'https://dl.dropboxusercontent.com/s/taje04bg20v7het/orangeCircle.png?dl=0';
+      var infoWindow1 = new google.maps.InfoWindow;
+      infoWindow1.setPosition({lat: 40.449610, lng: -79.948137});
+      infoWindow1.setContent('<div class="markerInfo">$25<br>Med Health Services</div>');
+      infoWindow1.open(map);
+      var hardcodedLocation1 = new google.maps.Marker({
+        position: {lat: 40.447110, lng: -79.948137},
+        map: map,
+        icon: orangeCircle
+      });
+      var infoWindow2 = new google.maps.InfoWindow;
+      infoWindow2.setPosition({lat: 40.448063, lng: -79.933370});
+      infoWindow2.setContent('<div class="markerInfo">$25<br>Med Health Services</div>');
+      infoWindow2.open(map);
+      var hardcodedLocation2 = new google.maps.Marker({
+        position: {lat: 40.445463, lng: -79.933370},
+        map: map,
+        icon: orangeCircle
+      });
+      var infoWindow3 = new google.maps.InfoWindow;
+      infoWindow3.setPosition({lat: 40.437304, lng: -79.942078});
+      infoWindow3.setContent('<div class="markerInfo">$25<br>Med Health Services</div>');
+      infoWindow3.open(map);
+      var hardcodedLocation3 = new google.maps.Marker({
+        position: {lat: 40.434804, lng: -79.942078 },
+        map: map,
+        icon: orangeCircle
+      });
+    }
+
+    // NOTE: uncomment code below for dynamic loading of markers/location via json
+    // // NOTE: This uses cross-domain XHR, and may not work on older browsers.
+    // map.data.loadGeoJson(
+    //   'https://api.myjson.com/bins/6c427'
+    // );
+
+    // // Loop through the results array and place a marker for each
+    // // set of coordinates.
+    // window.eqfeed_callback = function(results) {
+    //   for (var i = 0; i < results.features.length; i++) {
+    //     var coords = results.features[i].geometry.coordinates;
+    //     var latLng = new google.maps.LatLng(coords[1],coords[0]);
+    //     var marker = new google.maps.Marker({
+    //       position: latLng,
+    //       map: map
+    //     });
+    //   }
+    // }
+
+  </script>
+  <script async defer
+  src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBRTy16mGy3_ITp4Vb_41-HMPzZ9nAODoA&callback=initMap">
+  </script>
+</div>
