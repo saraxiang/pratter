@@ -12,11 +12,11 @@ html {
 
 /* make google map fill screen */
 html, body, .off-canvas-wrapper, .off-canvas-content, #map-row {
-  height: 97%;
+  height: 94.5%;
 }
 
 #bottomDiv {
-	height: 320px; //note that this is more than what is specified in settings.scss, forces the top of the div to show at the bottom of the screen
+	height: 350px; //note that this is more than what is specified in settings.scss, forces the top of the div to show at the bottom of the screen
 } 
 
 .dark-gray {
