@@ -2,81 +2,84 @@ html {
   font-family: "Franklin Gothic Medium", "Franklin Gothic", "ITC Franklin Gothic", Arial, sans-serif;
 }
 
-.center {
-  display: flex;
-  align-items: center;
-}
-
-#back-icon {
-  position: relative;
-  left: -25px;
-  width: 100%;
-  height: 25px;
-  background: white url(https://dl.dropboxusercontent.com/s/ib7pujsvodop16y/back-arrow.png?dl=0) center no-repeat;
-}
-
+/*********************************************** top bar ***********************************************/
 .top-bar {
   padding: 12px 8px;
 }
 
-.bold {
-  font-weight: bold;
+#view-toggle {
+  color: $orange;
+  text-decoration: underline;
+  font-size: 14px;
 }
 
-/* make google map fill screen */
+/********************************************** search **********************************************/
+#procedure{
+    padding: 8px 0px 8px 5px;
+    width: 85%;
+    font-size: 17px;
+    border: 0 none;
+    height: 52px;
+    margin-right: 0;
+    margin-bottom: 0;
+    color: $dark-gray;
+    outline: none;
+    background: $white;
+    float: left;
+    box-sizing: border-box;
+    transition: all 0.15s;
+}
+
+input::placeholder {
+  color: $dark-gray;
+}
+
+textarea:focus, input:focus{
+  outline: none;
+}
+
+#search-details-wrapper {
+  font-size: 15px;
+}
+
+#search-details, #search-by {
+  padding: 15px 5px 15px ; 
+}
+
+/********************************************** map **********************************************/
 html, body, .off-canvas-wrapper, .off-canvas-content, #map-row {
   height: 94.5%;
 }
 
-#blank-blue-row {
-  height: 100%;
-  background-color: $blue;
-}
-
 #bottomDiv {
-	height: 350px; //note that this is more than what is specified in settings.scss, forces the top of the div to show at the bottom of the screen
+	height: 350px; //note that this is more than what is specified in settings.scss (for off-canvas), forces the top of the div to show at the bottom of the screen
 } 
 
-.dark-gray {
+#map {
+  /* Always set the map height explicitly to define the size of the div
+   * element that contains the map. */
+  height: 100%;
+}
+
+#directions-map-wrapper {
+  height: 60%;
+}
+
+/********************************************** results/options **********************************************/
+
+#options {
+  list-style: none;
   color: $dark-gray;
 }
 
-.light-gray {
-  color: $light-gray;
+.option-item {
+  padding: 15px 0px;
 }
 
 .info-charge, .info-avg {
   display: inline-block;
   font-size: 13px;
   padding-left: 40px;
-}
-
-.price-tag {
-  border: 0 none;
-  background: white url(https://dl.dropboxusercontent.com/s/714lngd1rqt5y81/price-tag.png?dl=0) center no-repeat;
-  padding: 0;
-  text-align: center;
-  height: 22px;
-  width: 35px;
-}
-
-.no-horizontal-padding {
-  padding-left: 0px;
-  padding-right: 0px;
-}
-.some-vertical-padding {
-  padding: 15px 0px 0px 0px;  
-}
-
-.center-everything {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.center-vertically {
-  display: flex;
-  align-items: center;
 }
 
 .info-positioning {
@@ -88,56 +91,35 @@ html, body, .off-canvas-wrapper, .off-canvas-content, #map-row {
 .charge-price {
   color: $orange;
 }
+
 .insurance-price {
   color: $green;
 }
+
 .price {
-	font-size: 30px;
+  font-size: 30px;
   display: inline-block;
 }
+
 .name {
   color: $dark-gray;
-	font-size: 18px;
+  font-size: 18px;
   line-height: 21px;
 }
+
 .location {
   color: $dark-gray;
-	font-size: 12px;
+  font-size: 12px;
   line-height: 14px;
 }
+
 .title {
-	font-size: 21px;
+  font-size: 21px;
   color: $blue;
   font-weight: bold;
 }
 
-.no-padding {
-	padding: 0;
-}
-
-.center-text {
-  text-align: center;  
-}
-
-.full-width {
-	max-width: 100%;
-}
-.slider {
-	width: 90vw;
-	margin: auto;
-}
-.light-bottom-border {
-	border-bottom: 1px solid $light-gray;
-}
-.heavy-bottom-border {
-  border-bottom: 3px solid $light-gray;
-}
-.top-bar, .off-canvas-content, .search{
-	text-align: center;
-}
-.search {
-  padding: 8px;
-}
+/********************************************** details about a result/option **********************************************/
 
 #details-wrapper {
   height: 40%;
@@ -166,86 +148,89 @@ html, body, .off-canvas-wrapper, .off-canvas-content, #map-row {
   padding: 0 10px;
 }
 
-#directions-icon {
-  width: 100%;
-  height: 65px;
-  background: white url(https://dl.dropboxusercontent.com/s/kgo1zoavgbj2qbe/directions-logo.png?dl=0) center no-repeat;
+/********************************************** general style stuff ***********************************************/
+.center {
+  display: flex;
+  align-items: center;
 }
 
-#directions-map-wrapper {
-  height: 60%;
+.bold {
+  font-weight: bold;
 }
 
-#map {
-  /* Always set the map height explicitly to define the size of the div
-   * element that contains the map. */
-  height: 100%;
-}
-
-/* search */
-#procedure{
-    padding: 8px 0px 8px 5px;
-    width: 85%;
-    font-size: 17px;
-    border: 0 none;
-    height: 52px;
-    margin-right: 0;
-    margin-bottom: 0;
-    color: $dark-gray;
-    outline: none;
-    background: $white;
-    float: left;
-    box-sizing: border-box;
-    transition: all 0.15s;
-}
-
-#search-button {
-    border: 0 none;
-    background: white url(https://dl.dropboxusercontent.com/s/briypj1tztrcj34/search.png?dl=0) center no-repeat;
-    width: 15%;
-    float: left;
-    padding: 0;
-    text-align: center;
-    height: 52px;
-    cursor: pointer;
-}
-
-input::placeholder {
+.dark-gray {
   color: $dark-gray;
 }
 
-textarea:focus, input:focus{
-    outline: none;
+.light-gray {
+  color: $light-gray;
 }
 
-#search-details-wrapper {
-  font-size: 15px;
+.no-horizontal-padding {
+  padding-left: 0px;
+  padding-right: 0px;
+}
+.some-vertical-padding {
+  padding: 15px 0px 0px 0px;  
 }
 
-#search-details, #search-by {
-  padding: 15px 5px 15px ; 
-}
-
-#view-toggle {
-  color: $orange;
-  text-decoration: underline;
-  font-size: 14px;
-}
-
-#info-wrapper {
+.center-everything {
   display: flex;
   align-items: center;
-  justify-content: flex-end;
+  justify-content: center;
 }
-#info {
-  font-size: 15px;
-  width: 22px;
+
+.center-vertically {
+  display: flex;
+  align-items: center;
+}
+
+.no-padding {
+  padding: 0;
+}
+
+.center-text {
+  text-align: center;  
+}
+
+.full-width {
+  max-width: 100%;
+}
+
+.light-bottom-border {
+  border-bottom: 1px solid $light-gray;
+}
+.heavy-bottom-border {
+  border-bottom: 3px solid $light-gray;
+}
+
+#blank-blue-row {
+  height: 100%;
+  background-color: $blue;
+}
+
+/*********************************************** icons/pictures/buttons ***********************************************/
+#back-icon {
+  background: white url(https://dl.dropboxusercontent.com/s/ib7pujsvodop16y/back-arrow.png?dl=0) center no-repeat;
+  height: 25px;
+  left: -25px;
+  position: relative;
+  width: 100%;
+}
+
+.price-tag {
+  background: white url(https://dl.dropboxusercontent.com/s/714lngd1rqt5y81/price-tag.png?dl=0) center no-repeat;
+  border: 0 none;
   height: 22px;
-  -moz-border-radius: 50px;
-  -webkit-border-radius: 50px;
-  border-radius: 50px;
-  border: 1px solid $blue;
-  color: $blue;
+  padding: 0;
+  text-align: center;
+  width: 35px;
+}
+
+#directions-icon {
+  background: white url(https://dl.dropboxusercontent.com/s/kgo1zoavgbj2qbe/directions-logo.png?dl=0) center no-repeat;
+  height: 65px;
+  width: 100%;
 }
 
 #call-button-wrapper {
@@ -254,27 +239,47 @@ textarea:focus, input:focus{
   align-items: center;
   justify-content: center;
 }
+
 #call-button {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 10px;
-  width: 100%;
-  height: 30px;
   -moz-border-radius: 5px;
   -webkit-border-radius: 5px;
-  border-radius: 5px;
+  align-items: center;
   background-color: $orange;
+  border-radius: 5px;
   color: $white;
   cursor: pointer;
+  display: flex;
+  font-size: 10px;
   font-weight: bold;
+  height: 30px;
+  justify-content: center;
+  width: 100%;
 }
 
-#options {
-  list-style: none;
-  color: $dark-gray;
+#search-button {
+  background: white url(https://dl.dropboxusercontent.com/s/briypj1tztrcj34/search.png?dl=0) center no-repeat;
+  border: 0 none;
+  cursor: pointer;
+  float: left;
+  height: 52px;
+  padding: 0;
+  text-align: center;
+  width: 15%;
 }
 
-.option-item {
-  padding: 15px 0px;
+#info-wrapper {
+  align-items: center;
+  display: flex;
+  justify-content: flex-end;
+}
+
+#info {
+  -moz-border-radius: 50px;
+  -webkit-border-radius: 50px;
+  border-radius: 50px;
+  border: 1px solid $blue;
+  color: $blue;
+  font-size: 15px;
+  height: 22px;
+  width: 22px;
 }
